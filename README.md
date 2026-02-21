@@ -10,6 +10,8 @@ This Python script crawls through your Rhino file and uses a brute-force diction
 ## ⚠️ Known Limitation: The Missing "Š"
 Due to a hardcoded bug in Rhino's internal DGN parser, the uppercase **"Š"** (byte `0x8A` / decimal 138) is completely deleted during the import process. Because the data is physically destroyed before the file opens, **this script cannot restore the uppercase Š.** All other problematic characters, including lowercase "š", are successfully fixed.
 
+The bug is reported to McNeel [here](https://discourse.mcneel.com/t/encoding-bug-on-dgn-import/216194).
+
 ## How to Use
 1. Import your problematic `.dgn` file into Rhino.
 2. Type **`ScriptEditor`** (Rhino 8) or **`EditPythonScript`** (Rhino 7) into the command line and press Enter.
